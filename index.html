@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Laptop Price Predictor</h1>
+    <p class="subtitle">AI-driven valuation based on hardware specs</p>
+
+    <form action="/predict" method="post">
+        
+        <div class="form-group">
+            <label>Brand Name</label>
+            <select name="brand" required>
+                <option value="" disabled selected>Choose Brand</option>
+                <option value="asus">Asus</option>
+                <option value="lenovo">Lenovo</option>
+                <option value="dell">Dell</option>
+                <option value="hp">HP</option>
+                <option value="acer">Acer</option>
+                <option value="msi">MSI</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Processor Brand</label>
+            <select name="processor_brand" required>
+                <option value="" disabled selected>Choose CPU Brand</option>
+                <option value="intel">Intel</option>
+                <option value="amd">AMD</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Processor Type</label>
+            <select name="processor_type" required>
+                <option value="" disabled selected>Choose Series</option>
+                <option value="i3">Core i3</option>
+                <option value="i5">Core i5</option>
+                <option value="i7">Core i7</option>
+                <option value="i9">Core i9</option>
+                <option value="ryzen 3">Ryzen 3</option>
+                <option value="ryzen 5">Ryzen 5</option>
+                <option value="ryzen 7">Ryzen 7</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Generation</label>
+            <select name="generation" required>
+                <option value="" disabled selected>Choose Gen</option>
+                <option value="10th">10th Gen</option>
+                <option value="11th">11th Gen</option>
+                <option value="12th">12th Gen</option>
+                <option value="13th">13th Gen</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>RAM (GB)</label>
+            <select name="ram" required>
+                <option value="" disabled selected>Select RAM</option>
+                <option value="4">4 GB</option>
+                <option value="8">8 GB</option>
+                <option value="16">16 GB</option>
+                <option value="32">32 GB</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Storage (GB)</label>
+            <select name="storage" required>
+                <option value="" disabled selected>Select Storage</option>
+                <option value="256">256 GB</option>
+                <option value="512">512 GB</option>
+                <option value="1024">1 TB</option>
+                <option value="2048">2 TB</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Has SSD?</label>
+            <select name="ssd" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Has HDD?</label>
+            <select name="hdd" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>GPU (GB)</label>
+            <select name="gpu" required>
+                <option value="0">Integrated</option>
+                <option value="4">4 GB</option>
+                <option value="6">6 GB</option>
+                <option value="8">8 GB</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Screen Size</label>
+            <select name="screen" required>
+                <option value="13.3">13.3"</option>
+                <option value="14">14"</option>
+                <option value="15.6">15.6"</option>
+                <option value="17.3">17.3"</option>
+            </select>
+        </div>
+
+        <div class="form-group" style="grid-column: span 2;">
+            <label>Display Type</label>
+            <select name="display" required>
+                <option value="FHD">Full HD</option>
+                <option value="IPS">IPS Panel</option>
+                <option value="OLED">OLED</option>
+            </select>
+        </div>
+
+        <button type="submit">Predict Market Price</button>
+    </form>
+</div>
+
+</body>
+</html>

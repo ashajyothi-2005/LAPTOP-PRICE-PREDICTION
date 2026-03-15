@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Success</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<div class="container result-page">
+    <div class="success-badge">✅</div>
+    <h1>Prediction Successful!</h1>
+    <p class="subtitle">Your laptop evaluation is complete.</p>
+    
+    <div class="result-container">
+        <p class="price-label">ESTIMATED VALUE</p>
+        <h2 class="price-value">₹ {{ price }}</h2>
+    </div>
+
+    <p class="success-msg">The analysis was completed successfully.</p>
+
+    <a href="/" class="back-link">Evaluate Another Laptop</a>
+</div>
+
+<script>
+    // Full screen celebration
+    var end = Date.now() + (4 * 1000); // 4 seconds
+    var colors = ['#6366f1', '#a855f7', '#22c55e', '#ffffff'];
+
+    (function frame() {
+      confetti({
+        particleCount: 4,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: colors
+      });
+      confetti({
+        particleCount: 4,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: colors
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    }());
+</script>
+
+</body>
+</html>
